@@ -1,0 +1,87 @@
+Ex 01:
+
+
+import java.util.Scanner;
+
+class Lista02 {
+  public static void main(String[] args) {
+
+    
+   int[] matriculas = new int[100];
+        double[] notas = new double[100];
+
+        Scanner input = new Scanner(System.in);
+
+        
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Digite a matrícula: ");
+            matriculas[i] = input.nextInt();
+            System.out.print("Digite a nota: ");
+            notas[i] = input.nextDouble();
+        }
+
+        
+        double maiorNota = -1, segundaMaiorNota = -1;
+        int matriculaMaiorNota = 0, matriculaSegundaMaiorNota = 0;
+
+       
+        for (int i = 0; i < 5; i++) {
+            if (notas[i] > maiorNota) {
+                
+                segundaMaiorNota = maiorNota;
+                matriculaSegundaMaiorNota = matriculaMaiorNota;
+
+              
+                maiorNota = notas[i];
+                matriculaMaiorNota = matriculas[i];
+            } else if (notas[i] > segundaMaiorNota) {
+                
+                segundaMaiorNota = notas[i];
+                matriculaSegundaMaiorNota = matriculas[i];
+            }
+        }
+
+        
+        System.out.println("Maior nota: " + maiorNota + " - Matrícula: " + matriculaMaiorNota);
+        System.out.println("Segunda maior nota: " + segundaMaiorNota + " - Matrícula: " + matriculaSegundaMaiorNota);
+    }
+}
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Ex 02:
+
+import java.util.Scanner;
+class ex02 {
+  public static void main(String[] args) {
+      Scanner input = new Scanner(System.in);
+        
+       int n; 
+       int valor;
+       int posicao = 1;
+       int controle = 1; 
+       int i;
+
+        System.out.println("Digite um número inteiro:");
+        n = input.nextInt();
+
+        
+        while (posicao <= n) {
+            valor = controle; 
+            System.out.print(valor + " "); 
+            posicao += 1; 
+            valor += 3; 
+
+            
+            for (i = 0; i < 2; i++) {
+                System.out.print(valor + " ");
+                posicao += 0;
+            }
+            
+            controle += 1; 
+        }
+    }
+}
